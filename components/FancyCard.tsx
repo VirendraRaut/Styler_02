@@ -12,15 +12,15 @@ export default function FancyCard() {
           }}
           style={[styles.cardImage]}
         />
-      </View>
-      <View style={styles.cardBody}>
-        <Text style={styles.cardTitle}>Lake</Text>
-        <Text style={styles.cardLabel}>Germany</Text>
-        <Text style={styles.cardDescription}>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
-          culpa.
-        </Text>
-        <Text style={styles.cardFooter}>CardFooter</Text>
+        <View style={styles.cardBody}>
+          <Text style={styles.cardTitle}>Lake</Text>
+          <Text style={styles.cardLabel}>Germany</Text>
+          <Text style={styles.cardDescription}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
+            culpa.
+          </Text>
+          <Text style={styles.cardFooter}>CardFooter</Text>
+        </View>
       </View>
     </View>
   );
@@ -32,15 +32,31 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     paddingHorizontal: 10,
+    marginTop: 5,
   },
-  card: {},
-  elevatedCard: {},
+  card: {
+    width: 350,
+    height: 360,
+    borderRadius: 6,
+    margin: 14,
+  },
+  elevatedCard: {
+    backgroundColor: 'white',
+    elevation: 3,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+  },
   cardImage: {
     height: 150,
+    marginBottom: 8,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
   },
   cardBody: {},
-  cardTitle: { color: 'white' },
-  cardLabel: { color: 'white' },
-  cardDescription: { color: 'white' },
-  cardFooter: { color: 'white' },
+  cardTitle: { color: 'black' },
+  cardLabel: { color: 'black' },
+  cardDescription: { color: 'black' },
+  cardFooter: { color: 'black' },
 });
