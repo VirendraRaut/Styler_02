@@ -17,7 +17,26 @@ export default function FancyCard() {
           <Text style={styles.cardLabel}>Germany</Text>
           <Text style={styles.cardDescription}>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
-            culpa.
+            culpa. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Suscipit, eius.
+          </Text>
+          <Text style={styles.cardFooter}>CardFooter</Text>
+        </View>
+      </View>
+      <View style={[styles.card, styles.elevatedCard]}>
+        <Image
+          source={{
+            uri: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000',
+          }}
+          style={[styles.cardImage]}
+        />
+        <View style={styles.cardBody}>
+          <Text style={styles.cardTitle}>Lake</Text>
+          <Text style={styles.cardLabel}>Germany</Text>
+          <Text style={styles.cardDescription}>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
+            culpa. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Suscipit, eius.
           </Text>
           <Text style={styles.cardFooter}>CardFooter</Text>
         </View>
@@ -54,9 +73,25 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   },
-  cardBody: {},
-  cardTitle: { color: 'black' },
-  cardLabel: { color: 'black' },
-  cardDescription: { color: 'black' },
+  cardBody: {
+    flex: 1,
+    flexGrow: 1,
+    paddingHorizontal: 10,
+  },
+  cardTitle: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  cardLabel: {
+    color: 'black',
+    fontSize: 16,
+    marginBottom: 3,
+  },
+  cardDescription: {
+    color: '#535c68',
+    marginBottom: 3,
+  },
   cardFooter: { color: 'black' },
 });
