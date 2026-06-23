@@ -4,7 +4,7 @@ import React from 'react';
 export default function FancyCard() {
   return (
     <View>
-      <Text>FancyCard</Text>
+      <Text>Trending Places</Text>
     </View>
   );
 }
