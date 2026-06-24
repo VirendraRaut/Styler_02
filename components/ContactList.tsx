@@ -1,5 +1,5 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function ContactList() {
   const contacts = [
@@ -94,20 +94,22 @@ export default function ContactList() {
       imageUrl: 'https://randomuser.me/api/portraits/men/15.jpg',
     },
   ];
+
   return (
-    <View>
-      <Text style={styles.headingText}>ContactList</Text>
-      <ScrollView style={styles.container} scrollEnabled={false}>
+    <View style={styles.screen}>
+      <Text style={styles.headingText}>Contacts</Text>
+
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {contacts.map(({ uid, name, status, imageUrl }) => (
           <View key={uid} style={styles.userCard}>
-            <Image
-              source={{
-                uri: imageUrl,
-              }}
-              style={styles.userImage}
-            />
-            <Text style={styles.userName}>{name}</Text>
-            <Text style={styles.userStatus}>{status}</Text>
+            <Image source={{ uri: imageUrl }} style={styles.userImage} />
+
+            <View style={styles.userInfo}>
+              <Text style={styles.userName}>{name}</Text>
+              <Text style={styles.userStatus}>{status}</Text>
+            </View>
+
+            <View style={styles.onlineIndicator} />
           </View>
         ))}
       </ScrollView>
@@ -116,10 +118,69 @@ export default function ContactList() {
 }
 
 const styles = StyleSheet.create({
-  headingText: {},
-  container: {},
-  userCard: {},
-  userImage: {},
-  userName: {},
-  userStatus: {},
+  screen: {
+    flex: 1,
+    paddingTop: 10,
+  },
+
+  headingText: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#FFFFFF',
+    marginHorizontal: 16,
+    marginBottom: 12,
+  },
+
+  container: {
+    paddingHorizontal: 16,
+  },
+
+  userCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1E293B',
+    padding: 14,
+    borderRadius: 16,
+    marginBottom: 12,
+
+    elevation: 4,
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+  },
+
+  userImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+  },
+
+  userInfo: {
+    flex: 1,
+    marginLeft: 14,
+  },
+
+  userName: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#FFFFFF',
+    marginBottom: 4,
+  },
+
+  userStatus: {
+    fontSize: 14,
+    color: '#CBD5E1',
+  },
+
+  onlineIndicator: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#22C55E',
+  },
 });
